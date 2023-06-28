@@ -51,7 +51,7 @@
 							'view',
 							'scroll-view',
 							'swiper'
-							// #ifndef MP-TOUTIAO || MP-LARK
+							// #ifndef MP-TOUTIAO || MP-LARK || MP-XHS
 							,
 							'movable-view',
 							'cover-view'
@@ -96,7 +96,7 @@
 
 					},
 					// #endif
-					// #ifndef QUICKAPP-WEBVIEW-UNION
+					// #ifndef QUICKAPP-WEBVIEW-UNION || MP-XHS
 					{
 						id: 'canvas',
 						name: '画布',
@@ -126,7 +126,7 @@
 						pages: ['web-view']
 					},
 					// #endif
-					// #ifndef H5 || MP-BAIDU || QUICKAPP-WEBVIEW || MP-LARK || MP-JD
+					// #ifndef H5 || MP-BAIDU || QUICKAPP-WEBVIEW || MP-LARK || MP-JD || MP-XHS
 					{
 						id: 'ad',
 						url: 'ad',
