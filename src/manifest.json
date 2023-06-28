@@ -182,6 +182,9 @@
             "enable" : true
         }
     },
+    "mp-xhs":{
+        "appid": "649bcf45be816d0051838458"
+    },
     "quickapp-webview-huawei" : {
         "uniStatistics" : {
             "enable" : true
