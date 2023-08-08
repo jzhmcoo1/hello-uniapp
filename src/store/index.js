@@ -1,14 +1,12 @@
-// #ifndef VUE3
-import Vue from 'vue'
-import Vuex from 'vuex'
-Vue.use(Vuex)
-const store = new Vuex.Store({
-// #endif
+import moduleA from './modules/moduleA'
+import moduleB from './modules/moduleB'
 
-// #ifdef VUE3
 import { createStore } from 'vuex'
 const store = createStore({
-// #endif
+	modules: {
+		moduleA,
+		moduleB,
+	},
 	state: {
 		hasLogin: false,
 		isUniverifyLogin: false,
@@ -64,7 +62,7 @@ const store = createStore({
 			typeof payload !== 'boolean' ? payload = !!payload : '';
 			state.isUniverifyLogin = payload;
 		},
-		setUniverifyErrorMsg(state,payload = ''){
+		setUniverifyErrorMsg(state, payload = '') {
 			state.univerifyErrorMsg = payload
 		}
 	},
@@ -75,7 +73,7 @@ const store = createStore({
 	},
 	actions: {
 		// lazy loading openid
-		getUserOpenId: async function({
+		getUserOpenId: async function ({
 			commit,
 			state
 		}) {
@@ -86,7 +84,7 @@ const store = createStore({
 					uni.login({
 						success: (data) => {
 							commit('login')
-							setTimeout(function() { //模拟异步请求服务器获取 openid
+							setTimeout(function () { //模拟异步请求服务器获取 openid
 								const openid = '123456789'
 								console.log('uni.request mock openid[' + openid + ']');
 								commit('setOpenid', openid)
@@ -101,7 +99,7 @@ const store = createStore({
 				}
 			})
 		},
-		getPhoneNumber: function({
+		getPhoneNumber: function ({
 			commit
 		}, univerifyInfo) {
 			return new Promise((resolve, reject) => {

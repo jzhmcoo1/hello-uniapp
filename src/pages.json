@@ -271,6 +271,12 @@
 				"navigationBarTitleText": "web-view"
 			}
 		},
+		{
+			"path": "pages/component/vue-three/vue-three",
+			"style": {
+				"navigationBarTitleText": "Vue3测试"
+			}
+		},
 		// #ifdef APP-VUE || APP-NVUE
 		{
 			"path": "pages/component/ad/ad",
