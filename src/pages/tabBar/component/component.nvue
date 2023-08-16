@@ -47,14 +47,6 @@ export default {
 		return {
 			list: [
 				{
-					id: 'vue-three',
-					name: 'Vue3基本语法',
-					open: true,
-					pages: [
-						'vue-three',
-					],
-				},
-				{
 					id: 'view',
 					name: '视图容器',
 					open: false,
