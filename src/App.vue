@@ -95,10 +95,11 @@
 
 	/* 以下样式用于 hello uni-app 演示所需 */
 	page {
-		background-color: #efeff4;
+		// background-color: #efeff4;
 		height: 100%;
 		font-size: 28rpx;
 		/* line-height: 1.8; */
+		font-family: 'PingFang SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	}
 
 	.fix-pc-padding {
