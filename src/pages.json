@@ -20,12 +20,14 @@
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						"buttons": [
+							{
+								"text": "\ue534",
+								"fontSrc": "/static/uni.ttf",
+								"fontSize": "22px",
+								"color": "#FFFFFF"
+							}
+						]
 					}
 				}
 			}
@@ -36,12 +38,14 @@
 				"navigationBarTitleText": "接口",
 				"app-plus": {
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						"buttons": [
+							{
+								"text": "\ue534",
+								"fontSrc": "/static/uni.ttf",
+								"fontSize": "22px",
+								"color": "#FFFFFF"
+							}
+						]
 					}
 				}
 			}
@@ -52,12 +56,14 @@
 				"navigationBarTitleText": "模版",
 				"app-plus": {
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						"buttons": [
+							{
+								"text": "\ue534",
+								"fontSrc": "/static/uni.ttf",
+								"fontSize": "22px",
+								"color": "#FFFFFF"
+							}
+						]
 					}
 				}
 			}
@@ -68,12 +74,14 @@
 				"navigationBarTitleText": "扩展组件",
 				"app-plus": {
 					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
+						"buttons": [
+							{
+								"text": "\ue534",
+								"fontSrc": "/static/uni.ttf",
+								"fontSize": "22px",
+								"color": "#FFFFFF"
+							}
+						]
 					}
 				}
 			}
@@ -206,7 +214,8 @@
 					"softinputMode": "adjustResize"
 				}
 				// #ifdef MP-BAIDU
-				,"usingComponents": {
+				,
+				"usingComponents": {
 					"editor": "dynamicLib://editorLib/editor"
 				}
 				// #endif
@@ -277,6 +286,84 @@
 				"navigationBarTitleText": "Vue3测试"
 			}
 		},
+		{
+			"path": "pages/component/vue-two/vue-two",
+			"style": {
+				"navigationBarTitleText": "Vue2测试"
+			}
+		},
+		{
+			"path": "pages/component/mp-page-life-cycle/mp-page-life-cycle",
+			"style": {
+				"navigationBarTitleText": "Page生命周期"
+			}
+		},
+		{
+			"path": "pages/component/mp-component-life-cycle/mp-component-life-cycle",
+			"style": {
+				"navigationBarTitleText": "Component生命周期"
+			}
+		},
+		{
+			"path": "pages/component/mp-condition-render/mp-condition-render",
+			"style": {
+				"navigationBarTitleText": "条件渲染"
+			}
+		},
+		{
+			"path": "pages/component/mp-repeat-render/mp-repeat-render",
+			"style": {
+				"navigationBarTitleText": "列表渲染"
+			}
+		},
+		{
+			"path": "pages/component/mp-event-handler/mp-event-handler",
+			"style": {
+				"navigationBarTitleText": "事件处理"
+			}
+		},
+		{
+			"path": "pages/component/mp-dynamic-class-style/mp-dynamic-class-style",
+			"style": {
+				"navigationBarTitleText": "动态样式"
+			}
+		},
+		{
+			"path": "pages/component/mp-props-emit/mp-props-emit",
+			"style": {
+				"navigationBarTitleText": "父子通信"
+			}
+		},
+		{
+			"path": "pages/component/mp-reactive-data/mp-reactive-data",
+			"style": {
+				"navigationBarTitleText": "响应式数据"
+			}
+		},
+		{
+			"path": "pages/component/mp-directives/mp-directives",
+			"style": {
+				"navigationBarTitleText": "指令和自定义指令"
+			}
+		},
+		{
+			"path": "pages/component/mp-vuex-pinia/mp-vuex-pinia",
+			"style": {
+				"navigationBarTitleText": "Vuex和Pinia"
+			}
+		},
+		{
+			"path": "pages/component/mp-provide-inject/mp-provide-inject",
+			"style": {
+				"navigationBarTitleText": "provide 和 inject"
+			}
+		},
+		{
+			"path": "pages/component/mp-sjs/mp-sjs",
+			"style": {
+				"navigationBarTitleText": "SJS测试"
+			}
+		},
 		// #ifdef APP-VUE || APP-NVUE
 		{
 			"path": "pages/component/ad/ad",
@@ -336,32 +423,36 @@
 			}
 		}
 		// #ifdef H5
-		, {
+		,
+		{
 			"path": "pages/error/404",
 			"style": {
 				"navigationBarTitleText": "Not Found"
 			}
 		}
 		// #endif
-	,{
-    "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
-    "style": {
-        "app-plus": {
-            "animationDuration": 200,
-            "animationType": "fade-in",
-            "background": "transparent",
-            "backgroundColorTop": "transparent",
-            "popGesture": "none",
-            "scrollIndicator": false,
-            "titleNView": false
-        },
-        "disableScroll": true
-    }
-}
-],
-	"subPackages": [{
+		,
+		{
+			"path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
+			"style": {
+				"app-plus": {
+					"animationDuration": 200,
+					"animationType": "fade-in",
+					"background": "transparent",
+					"backgroundColorTop": "transparent",
+					"popGesture": "none",
+					"scrollIndicator": false,
+					"titleNView": false
+				},
+				"disableScroll": true
+			}
+		}
+	],
+	"subPackages": [
+		{
 			"root": "pages/API",
-			"pages": [{
+			"pages": [
+				{
 					"path": "login/login",
 					"style": {
 						"navigationBarTitleText": "授权登录"
@@ -373,34 +464,38 @@
 					"style": {
 						"navigationBarTitleText": "原生子窗体",
 						"app-plus": {
-							"subNVues": [{
-								"id": "drawer",
-								"path": "subnvue/subnvue/drawer",
-								"type": "popup",
-								"style": {
-									"width": "50%"
+							"subNVues": [
+								{
+									"id": "drawer",
+									"path": "subnvue/subnvue/drawer",
+									"type": "popup",
+									"style": {
+										"width": "50%"
+									}
+								},
+								{
+									"id": "popup",
+									"path": "subnvue/subnvue/popup",
+									"type": "popup",
+									"style": {
+										"margin": "auto",
+										"width": "80%",
+										"height": "600rpx"
+									}
+								},
+								{
+									"id": "video_mask",
+									"path": "subnvue/subnvue/video-mask",
+									"style": {
+										"position": "absolute",
+										"bottom": "30px",
+										"left": "0",
+										"width": "230px",
+										"height": "110px",
+										"background": "transparent"
+									}
 								}
-							}, {
-								"id": "popup",
-								"path": "subnvue/subnvue/popup",
-								"type": "popup",
-								"style": {
-									"margin": "auto",
-									"width": "80%",
-									"height": "600rpx"
-								}
-							}, {
-								"id": "video_mask",
-								"path": "subnvue/subnvue/video-mask",
-								"style": {
-									"position": "absolute",
-									"bottom": "30px",
-									"left": "0",
-									"width": "230px",
-									"height": "110px",
-									"background": "transparent"
-								}
-							}]
+							]
 						}
 					}
 				},
@@ -744,7 +839,8 @@
 		},
 		{
 			"root": "pages/extUI",
-			"pages": [{
+			"pages": [
+				{
 					"path": "forms/forms",
 					"style": {
 						"navigationBarTitleText": "Form 表单"
@@ -754,6 +850,12 @@
 					"path": "group/group",
 					"style": {
 						"navigationBarTitleText": "Group 分组"
+					}
+				},
+				{
+					"path": "mp-html/mp-html",
+					"style": {
+						"navigationBarTitleText": "MpHtml 富文本组件"
 					}
 				},
 				{
@@ -1128,7 +1230,8 @@
 						"navigationBarTitleText": "导航栏带自定义按钮",
 						"app-plus": {
 							"titleNView": {
-								"buttons": [{
+								"buttons": [
+									{
 										"type": "share"
 									},
 									{
@@ -1157,12 +1260,14 @@
 						"navigationBarTitleText": "导航栏带城市选择",
 						"app-plus": {
 							"titleNView": {
-								"buttons": [{
-									"text": "北京市",
-									"fontSize": "14",
-									"select": true,
-									"width": "auto"
-								}]
+								"buttons": [
+									{
+										"text": "北京市",
+										"fontSize": "14",
+										"select": true,
+										"width": "auto"
+									}
+								]
 							}
 						}
 					}
@@ -1173,7 +1278,8 @@
 						"navigationBarTitleText": "导航栏带红点和角标",
 						"app-plus": {
 							"titleNView": {
-								"buttons": [{
+								"buttons": [
+									{
 										"text": "消息",
 										"fontSize": "14",
 										"redDot": true
@@ -1197,14 +1303,16 @@
 								"type": "transparent",
 								"titleColor": "#fff",
 								"backgroundColor": "#007AFF",
-								"buttons": [{
-									"fontSrc": "/static/uni.ttf",
-									"text": "\ue537",
-									"width": "40px",
-									"fontSize": "28px",
-									"color": "#fff",
-									"background": "rgba(0,0,0,0)"
-								}],
+								"buttons": [
+									{
+										"fontSrc": "/static/uni.ttf",
+										"text": "\ue537",
+										"width": "40px",
+										"fontSize": "28px",
+										"color": "#fff",
+										"background": "rgba(0,0,0,0)"
+									}
+								],
 								"searchInput": {
 									"backgroundColor": "#fff",
 									"borderRadius": "6px",
@@ -1223,13 +1331,15 @@
 							"titleNView": {
 								"titleColor": "#fff",
 								"backgroundColor": "#007AFF",
-								"buttons": [{
-									"fontSrc": "/static/uni.ttf",
-									"text": "\ue537",
-									"width": "auto",
-									"fontSize": "28px",
-									"color": "#fff"
-								}],
+								"buttons": [
+									{
+										"fontSrc": "/static/uni.ttf",
+										"text": "\ue537",
+										"width": "auto",
+										"fontSize": "28px",
+										"color": "#fff"
+									}
+								],
 								"searchInput": {
 									"backgroundColor": "#fff",
 									"borderRadius": "6px",
@@ -1255,9 +1365,11 @@
 						"app-plus": {
 							"titleNView": {
 								"type": "transparent",
-								"buttons": [{
-									"type": "share"
-								}]
+								"buttons": [
+									{
+										"type": "share"
+									}
+								]
 							}
 						},
 						"h5": {
@@ -1349,14 +1461,14 @@
 			"navigationBarTextStyle": "black",
 			"navigationBarBackgroundColor": "#F1F1F1"
 		}
-
 	},
 	"tabBar": {
 		"color": "#7A7E83",
 		"selectedColor": "#007AFF",
 		"borderStyle": "black",
 		"backgroundColor": "#F8F8F8",
-		"list": [{
+		"list": [
+			{
 				"pagePath": "pages/tabBar/component/component",
 				"iconPath": "static/component.png",
 				"selectedIconPath": "static/componentHL.png",
@@ -1367,12 +1479,14 @@
 				"iconPath": "static/api.png",
 				"selectedIconPath": "static/apiHL.png",
 				"text": "接口"
-			}, {
+			},
+			{
 				"pagePath": "pages/tabBar/extUI/extUI",
 				"iconPath": "static/extui.png",
 				"selectedIconPath": "static/extuiHL.png",
 				"text": "扩展组件"
-			}, {
+			},
+			{
 				"pagePath": "pages/tabBar/template/template",
 				"iconPath": "static/template.png",
 				"selectedIconPath": "static/templateHL.png",

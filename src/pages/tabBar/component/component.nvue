@@ -137,6 +137,26 @@ export default {
 					open: false
 				},
 				// #endif
+				{
+					id: 'uniapp-vue',
+					name: 'uniapp插件测试',
+					open: true,
+					pages: [
+						{ name: 'Page 生命周期', url: 'mp-page-life-cycle' },
+						{ name: 'Component 生命周期', url: 'mp-component-life-cycle' },
+						{ name: '响应式数据', url: 'mp-reactive-data' },
+						{ name: '父子组件通信 props & emit', url: 'mp-props-emit' },
+						{ name: '隔代通信 provide & inject', url: 'mp-provide-inject' },
+						{ name: '动态样式 class & style', url: 'mp-dynamic-class-style' },
+						{ name: '条件渲染', url: 'mp-condition-render' },
+						{ name: '列表渲染', url: 'mp-repeat-render' },
+						{ name: '指令和自定义指令', url: 'mp-directives' },
+						{ name: '事件处理', url: 'mp-event-handler' },
+						{ name: '全局状态 vuex & pinia', url: 'mp-vuex-pinia' },
+						{ name: 'Vue3 composition', url: 'vue-three' },
+						{ name: 'SJS测试', url: 'mp-sjs' },
+					],
+				},
 			]
 		}
 	},
@@ -204,8 +224,9 @@ export default {
 						url: e.url
 					})
 				} else {
+					const mpUrl = '/pages/component/' + e.url + '/' + e.url
 					uni.navigateTo({
-						url: e.url
+						url: e.name ? mpUrl : e.url
 					})
 				}
 			}

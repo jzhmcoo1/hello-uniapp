@@ -33,7 +33,12 @@
 				hideList: [
 					'load-more'
 				],
-				lists: [{
+				lists: [
+					{
+						name: 'mp-html 小程序富文本组件',
+						url: 'mp-html'
+					},
+					{
 						name: "uni-badge 数字角标",
 						url: "badge"
 					},
