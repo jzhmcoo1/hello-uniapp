@@ -2,6 +2,8 @@
 import { ref, reactive, computed } from 'vue'
 import { onReady, onLoad, onShow, onHide, onUnload } from '@dcloudio/uni-app';
 import { useDataProvider } from '../../../composables/useData';
+import PageHead from '../../../components/page-head/page-head.vue'
+import MpTest from '../../../components/mp-test/mp-test.vue'
 
 useDataProvider()
 
@@ -17,15 +19,19 @@ const pageHeadRef = ref()
 
 onLoad(() => {
   data.lifeCycle.push('onLoad')
+  console.log("%c Line:21 🍰 onLoad pageHeadRef.value", "color:#42b983", pageHeadRef.value);
 })
 
 onShow(() => {
   data.lifeCycle.push('onShow')
+  console.log("%c Line:25 🍢 onShow pageHeadRef.value", "color:#3f7cff", pageHeadRef.value);
 })
 
 onReady(() => {
   data.lifeCycle.push('onReady')
+  console.log("%c Line:20 🍢 onReady pageHeadRef.value", "color:#3f7cff", pageHeadRef.value);
   data.customComponentRef = pageHeadRef.value
+  console.log("%c Line:29 🍪 data.customComponentRef", "color:#7f2b82", data.customComponentRef);
 })
 
 onHide(() => {
@@ -86,7 +92,7 @@ const testResult = computed(() => ({
   </view>
 </template>
 
-<style scoped>
+<style>
 :root {
   --pass-color: #42b983;
   --fail-color: #ff4949;

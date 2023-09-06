@@ -105,7 +105,8 @@
     "mp-weixin" : {
         "appid" : "",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "ignoreDevUnusedFiles": false
         },
         "usingComponents" : true,
         "permission" : {
@@ -115,7 +116,7 @@
         },
         "uniStatistics" : {
             "enable" : true
-        }
+        },
     },
     "mp-alipay" : {
         "usingComponents" : true,
