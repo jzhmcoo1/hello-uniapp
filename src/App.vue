@@ -97,7 +97,7 @@ uni-page-body {
 
 /* 以下样式用于 hello uni-app 演示所需 */
 page {
-	background-color: #efeff4;
+	// background-color: #efeff4;
 	// height: 100%;
 	font-size: 28rpx;
 	/* line-height: 1.8; */
@@ -144,6 +144,10 @@ page {
 	color: #fff;
 	height: 100px;
 	width: 100px;
+}
+
+scroll-view {
+	box-sizing: border-box;
 }
 
 /* #endif*/

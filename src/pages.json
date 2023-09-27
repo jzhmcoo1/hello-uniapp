@@ -834,6 +834,12 @@
 					"style": {
 						"navigationBarTitleText": "websocket-global"
 					}
+				},
+				{
+					"path": "load-fontface/load-fontface",
+					"style": {
+						"navigationBarTitleText": "动态加载字体 loadFontFace"
+					}
 				}
 			]
 		},

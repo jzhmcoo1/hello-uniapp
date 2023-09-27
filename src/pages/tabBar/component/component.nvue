@@ -140,7 +140,7 @@ export default {
 				{
 					id: 'uniapp-vue',
 					name: 'uniapp插件测试',
-					open: true,
+					open: false,
 					pages: [
 						{ name: 'Page 生命周期', url: 'mp-page-life-cycle' },
 						{ name: 'Component 生命周期', url: 'mp-component-life-cycle' },
