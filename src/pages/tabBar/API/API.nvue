@@ -146,6 +146,10 @@
                         {
                             name: '显示消息提示框',
                             url: 'toast'
+                        },
+                        {
+                            name: '动态加载字体',
+                            url: 'load-fontface',
                         }
                     ]
                 },

@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view style="padding: 20px;">
     <mp-html :content="html" />
     <mp-html :content="html2" />
   </view>
@@ -42,6 +42,19 @@
           <sub>sub标签</sub>
           <br />
           <sup>sup标签</sup>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti expedita voluptatibus doloremque quia ex natus doloribus dignissimos exercitationem minus, esse consequatur sint recusandae corporis nemo reiciendis? Fugit maxime error porro.
+  Eum saepe pariatur possimus incidunt ea corrupti ipsam asperiores consequatur sit exercitationem impedit sequi doloremque repellendus recusandae, necessitatibus labore modi deleniti, voluptates quam debitis autem inventore dignissimos error. Aperiam, molestias.
+  Aliquam voluptates reiciendis maxime voluptas quam ea dignissimos adipisci eum dolor repellendus id perspiciatis nulla quae odit, corporis aspernatur alias architecto molestias nostrum nesciunt? Molestiae ullam quisquam excepturi omnis voluptate?
+  Qui sunt cupiditate quos soluta dolor. Eum reprehenderit sit fugit? Sapiente, saepe fugit tempore, error sit aliquid perferendis excepturi libero asperiores esse explicabo ratione quos deleniti odit magni ducimus unde.
+  Numquam distinctio quaerat nisi sed ipsa pariatur nulla adipisci fuga perspiciatis id repellendus beatae explicabo, temporibus vero! Debitis, veritatis dolores architecto deserunt facilis, ipsa magni, reprehenderit sit sequi ipsam repudiandae.
+  Reiciendis, assumenda numquam, autem ullam aperiam officiis ipsa laudantium sapiente dolorem eaque eum voluptates! Molestias quisquam, id assumenda illo, ipsam ea, delectus recusandae repudiandae voluptate facere aperiam maiores! Itaque, repellat!
+  Porro, neque, quae perspiciatis eos architecto ipsam aliquam beatae sint iusto dolores voluptatem quidem delectus exercitationem nisi nemo a, numquam saepe nulla magni in nostrum temporibus ea accusamus inventore. Delectus?
+  Eveniet numquam deleniti ipsam, inventore voluptatibus quidem similique commodi maiores quos quasi asperiores expedita saepe natus, quia sint eum aperiam tempora deserunt ad earum reprehenderit perferendis unde? Debitis, blanditiis labore?
+  Minima nam quam pariatur, ab voluptas sint cumque esse autem nulla dolorum amet nihil corporis facere ullam hic? Consequuntur libero soluta repellendus consectetur quasi saepe sequi expedita, facere pariatur? Ipsam.
+  Eum, reiciendis vitae sint dignissimos suscipit quisquam. Eius saepe perferendis voluptatibus aspernatur ad error quasi voluptas modi atque eveniet obcaecati, facere quibusdam? Optio, praesentium? Nisi ipsa voluptas praesentium error dolor!
+          </p>
           <br />
         `
       }
