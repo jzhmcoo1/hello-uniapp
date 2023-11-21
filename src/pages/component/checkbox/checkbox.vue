@@ -96,6 +96,7 @@
 
 <style>
 .uni-list-cell {
-	justify-content: flex-start
+	/* xhs app.css优先级高于页面的，所以这里临时覆盖下 */
+	justify-content: flex-start !important
 }
 </style>

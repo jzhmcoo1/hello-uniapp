@@ -2,6 +2,7 @@
   "name": "uni-preset-vue",
   "version": "0.0.0",
   "scripts": {
+    "lint": "eslint --fix",
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
     "dev:app-ios": "uni -p app-ios",
@@ -51,6 +52,7 @@
     "@dcloudio/uni-mp-lark": "3.0.0-alpha-3090020230826001",
     "@dcloudio/uni-mp-qq": "3.0.0-alpha-3090020230826001",
     "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3090020230826001",
+    "@dcloudio/uni-mp-vue": "^3.0.0-alpha-3090020230826001",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3090020230826001",
     "@dcloudio/uni-mp-xhs": "3.0.0-alpha-3090020230826001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3090020230826001",
@@ -68,11 +70,26 @@
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3090020230826001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3090020230826001",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.18.1",
     "vite": "4.0.3"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001": "patches/@dcloudio__uni-mp-xhs@3.0.0-alpha-3090020230826001.patch",
+      "@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001": "patches/@dcloudio__uni-mp-vue@3.0.0-alpha-3090020230826001.patch"
+    }
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

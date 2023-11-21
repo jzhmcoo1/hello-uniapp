@@ -85,6 +85,6 @@
 
 <style>
 	.uni-list-cell {
-		justify-content: flex-start
+		justify-content: flex-start !important
 	}
 </style>

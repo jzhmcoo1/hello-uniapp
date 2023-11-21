@@ -94,15 +94,15 @@ export default {
     },
     map: {
       type: Object,
-      default() {
+      default () {
         return {
-          text: "text",
-          value: "value"
+          text: 'text',
+          value: 'value'
         }
       }
     }
   },
-  data() {
+  data () {
     return {
       loading: false,
       errorMessage: '',
@@ -122,30 +122,30 @@ export default {
     }
   },
   computed: {
-    isLocaldata() {
+    isLocaldata () {
       return !this.collection.length
     },
-    postField() {
-      let fields = [this.field];
+    postField () {
+      const fields = [this.field]
       if (this.parentField) {
-        fields.push(`${this.parentField} as parent_value`);
+        fields.push(`${this.parentField} as parent_value`)
       }
-      return fields.join(',');
+      return fields.join(',')
     },
-    dataValue() {
-      let isModelValue = Array.isArray(this.modelValue) ? (this.modelValue.length > 0) : (this.modelValue !== null || this.modelValue !== undefined)
+    dataValue () {
+      const isModelValue = Array.isArray(this.modelValue) ? (this.modelValue.length > 0) : (this.modelValue !== null || this.modelValue !== undefined)
       return isModelValue ? this.modelValue : this.value
     },
-    hasValue() {
+    hasValue () {
       if (typeof this.dataValue === 'number') {
         return true
       }
       return (this.dataValue != null) && (this.dataValue.length > 0)
     }
   },
-  created() {
+  created () {
     this.$watch(() => {
-      var al = [];
+      const al = [];
       ['pageCurrent',
         'pageSize',
         'spaceInfo',
@@ -162,7 +162,7 @@ export default {
         'gettree'
       ].forEach(key => {
         al.push(this[key])
-      });
+      })
       return al
     }, (newValue, oldValue) => {
       let needReset = false
@@ -182,10 +182,10 @@ export default {
     this._treeData = []
   },
   methods: {
-    onPropsChange() {
+    onPropsChange () {
       this._treeData = []
     },
-    getCommand(options = {}) {
+    getCommand (options = {}) {
       /* eslint-disable no-undef */
       let db = uniCloud.database(this.spaceInfo)
 
@@ -229,14 +229,14 @@ export default {
 
       return db
     },
-		getNodeData(callback) {
+    getNodeData (callback) {
 		  if (this.loading) {
 		    return
 		  }
 		  this.loading = true
 		  this.getCommand({
 		    field: this.postField,
-				where: this._pathWhere()
+        where: this._pathWhere()
 		  }).then((res) => {
 		    this.loading = false
 		    this.selected = res.result.data
@@ -245,8 +245,8 @@ export default {
 		    this.loading = false
 		    this.errorMessage = err
 		  })
-		},
-    getTreePath(callback) {
+    },
+    getTreePath (callback) {
       if (this.loading) {
         return
       }
@@ -259,7 +259,7 @@ export default {
         }
       }).then((res) => {
         this.loading = false
-        let treePath = []
+        const treePath = []
         this._extractTreePath(res.result.data, treePath)
         this.selected = treePath
         callback && callback()
@@ -268,7 +268,7 @@ export default {
         this.errorMessage = err
       })
     },
-    loadData() {
+    loadData () {
       if (this.isLocaldata) {
         this._processLocalData()
         return
@@ -296,7 +296,7 @@ export default {
         })
       }
     },
-    _loadAllData(callback) {
+    _loadAllData (callback) {
       if (this.loading) {
         return
       }
@@ -315,7 +315,7 @@ export default {
         this.errorMessage = err
       })
     },
-    _loadNodeData(callback, pw) {
+    _loadNodeData (callback, pw) {
       if (this.loading) {
         return
       }
@@ -334,9 +334,9 @@ export default {
         this.errorMessage = err
       })
     },
-    _pathWhere() {
-      let result = []
-      let where_field = this._getParentNameByField();
+    _pathWhere () {
+      const result = []
+      const where_field = this._getParentNameByField()
       if (where_field) {
         result.push(`${where_field} == '${this.dataValue}'`)
       }
@@ -347,20 +347,20 @@ export default {
 
       return result.join(' || ')
     },
-    _postWhere() {
-      let result = []
-      let selected = this.selected
-      let parentField = this.parentField
+    _postWhere () {
+      const result = []
+      const selected = this.selected
+      const parentField = this.parentField
       if (parentField) {
         result.push(`${parentField} == null || ${parentField} == ""`)
       }
       if (selected.length) {
-        for (var i = 0; i < selected.length - 1; i++) {
+        for (let i = 0; i < selected.length - 1; i++) {
           result.push(`${parentField} == '${selected[i].value}'`)
         }
       }
 
-      let where = []
+      const where = []
       if (this.where) {
         where.push(`(${this.where})`)
       }
@@ -370,9 +370,9 @@ export default {
 
       return where.join(' && ')
     },
-    _nodeWhere() {
-      let result = []
-      let selected = this.selected
+    _nodeWhere () {
+      const result = []
+      const selected = this.selected
       if (selected.length) {
         result.push(`${this.parentField} == '${selected[selected.length - 1].value}'`)
       }
@@ -383,34 +383,34 @@ export default {
 
       return result.join(' || ')
     },
-    _getParentNameByField() {
-      const fields = this.field.split(',');
-      let where_field = null;
+    _getParentNameByField () {
+      const fields = this.field.split(',')
+      let where_field = null
       for (let i = 0; i < fields.length; i++) {
-        const items = fields[i].split('as');
+        const items = fields[i].split('as')
         if (items.length < 2) {
-          continue;
+          continue
         }
         if (items[1].trim() === 'value') {
-          where_field = items[0].trim();
-          break;
+          where_field = items[0].trim()
+          break
         }
       }
       return where_field
     },
-    _isTreeView() {
+    _isTreeView () {
       return (this.parentField && this.selfField)
     },
-    _updateSelected() {
-      var dl = this.dataList
-      var sl = this.selected
-      let textField = this.map.text
-      let valueField = this.map.value
-      for (var i = 0; i < sl.length; i++) {
-        var value = sl[i].value
-        var dl2 = dl[i]
-        for (var j = 0; j < dl2.length; j++) {
-          var item2 = dl2[j]
+    _updateSelected () {
+      const dl = this.dataList
+      const sl = this.selected
+      const textField = this.map.text
+      const valueField = this.map.value
+      for (let i = 0; i < sl.length; i++) {
+        const value = sl[i].value
+        const dl2 = dl[i]
+        for (let j = 0; j < dl2.length; j++) {
+          const item2 = dl2[j]
           if (item2[valueField] === value) {
             sl[i].text = item2[textField]
             break
@@ -418,13 +418,13 @@ export default {
         }
       }
     },
-    _updateBindData(node) {
+    _updateBindData (node) {
       const {
         dataList,
         hasNodes
       } = this._filterData(this._treeData, this.selected)
 
-      let isleaf = this._stepSearh === false && !hasNodes
+      const isleaf = this._stepSearh === false && !hasNodes
 
       if (node) {
         node.isleaf = isleaf
@@ -436,7 +436,7 @@ export default {
       if (!isleaf && this.selected.length < dataList.length) {
         this.selected.push({
           value: null,
-          text: "请选择"
+          text: '请选择'
         })
       }
 
@@ -445,8 +445,8 @@ export default {
         hasNodes
       }
     },
-    _filterData(data, paths) {
-      let dataList = []
+    _filterData (data, paths) {
+      const dataList = []
       let hasNodes = true
 
       dataList.push(data.filter((item) => {
@@ -454,7 +454,7 @@ export default {
       }))
       for (let i = 0; i < paths.length; i++) {
         var value = paths[i].value
-        var nodes = data.filter((item) => {
+        const nodes = data.filter((item) => {
           return item.parent_value === value
         })
 
@@ -470,14 +470,14 @@ export default {
         hasNodes
       }
     },
-    _extractTree(nodes, result, parent_value) {
-      let list = result || []
-      let valueField = this.map.value
+    _extractTree (nodes, result, parent_value) {
+      const list = result || []
+      const valueField = this.map.value
       for (let i = 0; i < nodes.length; i++) {
-        let node = nodes[i]
+        const node = nodes[i]
 
-        let child = {}
-        for (let key in node) {
+        const child = {}
+        for (const key in node) {
           if (key !== 'children') {
             child[key] = node[key]
           }
@@ -487,39 +487,39 @@ export default {
         }
         result.push(child)
 
-        let children = node.children
+        const children = node.children
         if (children) {
           this._extractTree(children, result, node[valueField])
         }
       }
     },
-    _extractTreePath(nodes, result) {
-      let list = result || []
+    _extractTreePath (nodes, result) {
+      const list = result || []
       for (let i = 0; i < nodes.length; i++) {
-        let node = nodes[i]
+        const node = nodes[i]
 
-        let child = {}
-        for (let key in node) {
+        const child = {}
+        for (const key in node) {
           if (key !== 'children') {
             child[key] = node[key]
           }
         }
         result.push(child)
 
-        let children = node.children
+        const children = node.children
         if (children) {
           this._extractTreePath(children, result)
         }
       }
     },
-    _findNodePath(key, nodes, path = []) {
-      let textField = this.map.text
-      let valueField = this.map.value
+    _findNodePath (key, nodes, path = []) {
+      const textField = this.map.text
+      const valueField = this.map.value
       for (let i = 0; i < nodes.length; i++) {
-        let node = nodes[i]
-        let children = node.children
-        let text = node[textField]
-        let value = node[valueField]
+        const node = nodes[i]
+        const children = node.children
+        const text = node[textField]
+        const value = node[valueField]
 
         path.push({
           value,
@@ -541,11 +541,11 @@ export default {
       }
       return []
     },
-    _processLocalData() {
+    _processLocalData () {
       this._treeData = []
       this._extractTree(this.localdata, this._treeData)
 
-      var inputValue = this.dataValue
+      let inputValue = this.dataValue
       if (inputValue === undefined) {
         return
       }
