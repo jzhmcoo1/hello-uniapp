@@ -205,7 +205,7 @@
 				"navigationBarTitleText": "textarea"
 			}
 		},
-		// #ifdef APP-PLUS || MP-WEIXIN || H5 || MP-BAIDU
+		// #ifdef APP-PLUS || MP-WEIXIN || H5 || MP-BAIDU || MP-XHS
 		{
 			"path": "pages/component/editor/editor",
 			"style": {

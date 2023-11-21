@@ -79,274 +79,270 @@
  *
  */
 // Regular Expressions for parsing tags and attributes
-var startTag = /^<([-A-Za-z0-9_]+)((?:\s+[a-zA-Z_:][-a-zA-Z0-9_:.]*(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/;
-var endTag = /^<\/([-A-Za-z0-9_]+)[^>]*>/;
-var attr = /([a-zA-Z_:][-a-zA-Z0-9_:.]*)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|([^>\s]+)))?/g; // Empty Elements - HTML 5
+const startTag = /^<([-A-Za-z0-9_]+)((?:\s+[a-zA-Z_:][-a-zA-Z0-9_:.]*(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/
+const endTag = /^<\/([-A-Za-z0-9_]+)[^>]*>/
+const attr = /([a-zA-Z_:][-a-zA-Z0-9_:.]*)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|([^>\s]+)))?/g // Empty Elements - HTML 5
 
-var empty = makeMap('area,base,basefont,br,col,frame,hr,img,input,link,meta,param,embed,command,keygen,source,track,wbr'); // Block Elements - HTML 5
+const empty = makeMap('area,base,basefont,br,col,frame,hr,img,input,link,meta,param,embed,command,keygen,source,track,wbr') // Block Elements - HTML 5
 // fixed by xxx 将 ins 标签从块级名单中移除
 
-var block = makeMap('a,address,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video'); // Inline Elements - HTML 5
+const block = makeMap('a,address,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video') // Inline Elements - HTML 5
 
-var inline = makeMap('abbr,acronym,applet,b,basefont,bdo,big,br,button,cite,code,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var'); // Elements that you can, intentionally, leave open
+const inline = makeMap('abbr,acronym,applet,b,basefont,bdo,big,br,button,cite,code,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var') // Elements that you can, intentionally, leave open
 // (and which close themselves)
 
-var closeSelf = makeMap('colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr'); // Attributes that have their values filled in disabled="disabled"
+const closeSelf = makeMap('colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr') // Attributes that have their values filled in disabled="disabled"
 
-var fillAttrs = makeMap('checked,compact,declare,defer,disabled,ismap,multiple,nohref,noresize,noshade,nowrap,readonly,selected'); // Special Elements (can contain anything)
+const fillAttrs = makeMap('checked,compact,declare,defer,disabled,ismap,multiple,nohref,noresize,noshade,nowrap,readonly,selected') // Special Elements (can contain anything)
 
-var special = makeMap('script,style');
-function HTMLParser(html, handler) {
-  var index;
-  var chars;
-  var match;
-  var stack = [];
-  var last = html;
+const special = makeMap('script,style')
+function HTMLParser (html, handler) {
+  let index
+  let chars
+  let match
+  const stack = []
+  let last = html
 
   stack.last = function () {
-    return this[this.length - 1];
-  };
+    return this[this.length - 1]
+  }
 
   while (html) {
-    chars = true; // Make sure we're not in a script or style element
+    chars = true // Make sure we're not in a script or style element
 
     if (!stack.last() || !special[stack.last()]) {
       // Comment
       if (html.indexOf('<!--') == 0) {
-        index = html.indexOf('-->');
+        index = html.indexOf('-->')
 
         if (index >= 0) {
           if (handler.comment) {
-            handler.comment(html.substring(4, index));
+            handler.comment(html.substring(4, index))
           }
 
-          html = html.substring(index + 3);
-          chars = false;
+          html = html.substring(index + 3)
+          chars = false
         } // end tag
-
       } else if (html.indexOf('</') == 0) {
-        match = html.match(endTag);
+        match = html.match(endTag)
 
         if (match) {
-          html = html.substring(match[0].length);
-          match[0].replace(endTag, parseEndTag);
-          chars = false;
+          html = html.substring(match[0].length)
+          match[0].replace(endTag, parseEndTag)
+          chars = false
         } // start tag
-
       } else if (html.indexOf('<') == 0) {
-        match = html.match(startTag);
+        match = html.match(startTag)
 
         if (match) {
-          html = html.substring(match[0].length);
-          match[0].replace(startTag, parseStartTag);
-          chars = false;
+          html = html.substring(match[0].length)
+          match[0].replace(startTag, parseStartTag)
+          chars = false
         }
       }
 
       if (chars) {
-        index = html.indexOf('<');
-        var text = index < 0 ? html : html.substring(0, index);
-        html = index < 0 ? '' : html.substring(index);
+        index = html.indexOf('<')
+        const text = index < 0 ? html : html.substring(0, index)
+        html = index < 0 ? '' : html.substring(index)
 
         if (handler.chars) {
-          handler.chars(text);
+          handler.chars(text)
         }
       }
     } else {
       html = html.replace(new RegExp('([\\s\\S]*?)<\/' + stack.last() + '[^>]*>'), function (all, text) {
-        text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, '$1$2');
+        text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, '$1$2')
 
         if (handler.chars) {
-          handler.chars(text);
+          handler.chars(text)
         }
 
-        return '';
-      });
-      parseEndTag('', stack.last());
+        return ''
+      })
+      parseEndTag('', stack.last())
     }
 
     if (html == last) {
-      throw 'Parse Error: ' + html;
+      throw 'Parse Error: ' + html
     }
 
-    last = html;
+    last = html
   } // Clean up any remaining tags
 
+  parseEndTag()
 
-  parseEndTag();
-
-  function parseStartTag(tag, tagName, rest, unary) {
-    tagName = tagName.toLowerCase();
+  function parseStartTag (tag, tagName, rest, unary) {
+    tagName = tagName.toLowerCase()
 
     if (block[tagName]) {
       while (stack.last() && inline[stack.last()]) {
-        parseEndTag('', stack.last());
+        parseEndTag('', stack.last())
       }
     }
 
     if (closeSelf[tagName] && stack.last() == tagName) {
-      parseEndTag('', tagName);
+      parseEndTag('', tagName)
     }
 
-    unary = empty[tagName] || !!unary;
+    unary = empty[tagName] || !!unary
 
     if (!unary) {
-      stack.push(tagName);
+      stack.push(tagName)
     }
 
     if (handler.start) {
-      var attrs = [];
+      const attrs = []
       rest.replace(attr, function (match, name) {
-        var value = arguments[2] ? arguments[2] : arguments[3] ? arguments[3] : arguments[4] ? arguments[4] : fillAttrs[name] ? name : '';
+        const value = arguments[2] ? arguments[2] : arguments[3] ? arguments[3] : arguments[4] ? arguments[4] : fillAttrs[name] ? name : ''
         attrs.push({
-          name: name,
-          value: value,
+          name,
+          value,
           escaped: value.replace(/(^|[^\\])"/g, '$1\\\"') // "
 
-        });
-      });
+        })
+      })
 
       if (handler.start) {
-        handler.start(tagName, attrs, unary);
+        handler.start(tagName, attrs, unary)
       }
     }
   }
 
-  function parseEndTag(tag, tagName) {
+  function parseEndTag (tag, tagName) {
     // If no tag name is provided, clean shop
     if (!tagName) {
-      var pos = 0;
+      var pos = 0
     } // Find the closest opened tag of the same type
     else {
-        for (var pos = stack.length - 1; pos >= 0; pos--) {
-          if (stack[pos] == tagName) {
-            break;
-          }
+      for (var pos = stack.length - 1; pos >= 0; pos--) {
+        if (stack[pos] == tagName) {
+          break
         }
       }
+    }
 
     if (pos >= 0) {
       // Close all the open elements, up the stack
-      for (var i = stack.length - 1; i >= pos; i--) {
+      for (let i = stack.length - 1; i >= pos; i--) {
         if (handler.end) {
-          handler.end(stack[i]);
+          handler.end(stack[i])
         }
       } // Remove the open elements from the stack
 
-
-      stack.length = pos;
+      stack.length = pos
     }
   }
 }
 
-function makeMap(str) {
-  var obj = {};
-  var items = str.split(',');
+function makeMap (str) {
+  const obj = {}
+  const items = str.split(',')
 
-  for (var i = 0; i < items.length; i++) {
-    obj[items[i]] = true;
+  for (let i = 0; i < items.length; i++) {
+    obj[items[i]] = true
   }
 
-  return obj;
+  return obj
 }
 
-function removeDOCTYPE(html) {
-  return html.replace(/<\?xml.*\?>\n/, '').replace(/<!doctype.*>\n/, '').replace(/<!DOCTYPE.*>\n/, '');
+function removeDOCTYPE (html) {
+  return html.replace(/<\?xml.*\?>\n/, '').replace(/<!doctype.*>\n/, '').replace(/<!DOCTYPE.*>\n/, '')
 }
 
-function parseAttrs(attrs) {
+function parseAttrs (attrs) {
   return attrs.reduce(function (pre, attr) {
-    var value = attr.value;
-    var name = attr.name;
+    const value = attr.value
+    const name = attr.name
 
     if (pre[name]) {
-			pre[name] = pre[name] + " " + value;
+      pre[name] = pre[name] + ' ' + value
     } else {
-			pre[name] = value;
+      pre[name] = value
     }
 
-    return pre;
-  }, {});
+    return pre
+  }, {})
 }
 
-function parseHtml(html) {
-  html = removeDOCTYPE(html);
-  var stacks = [];
-  var results = {
+function parseHtml (html) {
+  html = removeDOCTYPE(html)
+  const stacks = []
+  const results = {
     node: 'root',
     children: []
-  };
+  }
   HTMLParser(html, {
-    start: function start(tag, attrs, unary) {
-      var node = {
+    start: function start (tag, attrs, unary) {
+      const node = {
         name: tag
-      };
+      }
 
       if (attrs.length !== 0) {
-        node.attrs = parseAttrs(attrs);
+        node.attrs = parseAttrs(attrs)
       }
 
       if (unary) {
-        var parent = stacks[0] || results;
+        const parent = stacks[0] || results
 
         if (!parent.children) {
-          parent.children = [];
+          parent.children = []
         }
 
-        parent.children.push(node);
+        parent.children.push(node)
       } else {
-        stacks.unshift(node);
+        stacks.unshift(node)
       }
     },
-    end: function end(tag) {
-      var node = stacks.shift();
-      if (node.name !== tag) console.error('invalid state: mismatch end tag');
+    end: function end (tag) {
+      const node = stacks.shift()
+      if (node.name !== tag) console.error('invalid state: mismatch end tag')
 
       if (stacks.length === 0) {
-        results.children.push(node);
+        results.children.push(node)
       } else {
-        var parent = stacks[0];
+        const parent = stacks[0]
 
         if (!parent.children) {
-          parent.children = [];
+          parent.children = []
         }
 
-        parent.children.push(node);
+        parent.children.push(node)
       }
     },
-    chars: function chars(text) {
-      var node = {
+    chars: function chars (text) {
+      const node = {
         type: 'text',
-        text: text
-      };
+        text
+      }
 
       if (stacks.length === 0) {
-        results.children.push(node);
+        results.children.push(node)
       } else {
-        var parent = stacks[0];
+        const parent = stacks[0]
 
         if (!parent.children) {
-          parent.children = [];
+          parent.children = []
         }
 
-        parent.children.push(node);
+        parent.children.push(node)
       }
     },
-    comment: function comment(text) {
-      var node = {
+    comment: function comment (text) {
+      const node = {
         node: 'comment',
-        text: text
-      };
-      var parent = stacks[0];
+        text
+      }
+      const parent = stacks[0]
 
       if (!parent.children) {
-        parent.children = [];
+        parent.children = []
       }
 
-      parent.children.push(node);
+      parent.children.push(node)
     }
-  });
-  return results.children;
+  })
+  return results.children
 }
 
-export default parseHtml;
+export default parseHtml

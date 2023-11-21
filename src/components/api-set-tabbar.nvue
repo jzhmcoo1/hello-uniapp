@@ -1,8 +1,10 @@
 <template>
 	<view class="uni-padding-wrap">
 		<page-head :title="title"></page-head>
+		<!-- #ifndef MP-XHS  -->
 		<button class="button" @click="setTabBarBadge">{{ !hasSetTabBarBadge ? '设置tab徽标' : '移除tab徽标' }}</button>
 		<button class="button" @click="showTabBarRedDot">{{ !hasShownTabBarRedDot ?  '显示红点' : '移除红点'}}</button>
+		<!-- #endif -->
 		<button class="button" @click="customStyle">{{ !hasCustomedStyle ? '自定义Tab样式' : '移除自定义样式'}}</button>
 		<button class="button" @click="customItem">{{ !hasCustomedItem ? '自定义Tab信息' : '移除自定义信息' }}</button>
 		<button class="button" @click="hideTabBar">{{ !hasHiddenTabBar ? '隐藏TabBar' : '显示TabBar' }}</button>
@@ -116,7 +118,7 @@
 					})
 				} else {
 					uni.setTabBarStyle({
-						color: '#FFF',
+						color: '#FFFFFF', // 需要写6位，否则bridge报错
 						selectedColor: '#007AFF',
 						backgroundColor: '#000000',
 						borderStyle: 'black'
@@ -146,8 +148,8 @@
 <style>
 	.button {
 		margin-top: 30rpx;
-        margin-left: 0;
-        margin-right: 0;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.btn-area {

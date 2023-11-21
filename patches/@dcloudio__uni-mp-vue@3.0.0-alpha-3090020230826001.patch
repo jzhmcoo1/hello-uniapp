@@ -1,0 +1,28 @@
+diff --git a/dist/vue.runtime.esm.js b/dist/vue.runtime.esm.js
+index 675cfeedc610be7aca9dbbe57a0d46139e3fc285..688dfbd43bf616d629be4494d8f736f818235c7a 100644
+--- a/dist/vue.runtime.esm.js
++++ b/dist/vue.runtime.esm.js
+@@ -5176,7 +5176,13 @@ function renderComponentRoot(instance) {
+         handleError(err, instance, 1 /* ErrorCodes.RENDER_FUNCTION */);
+         result = false;
+     }
+-    setRef$1(instance);
++    if (ctx.$mpPlatform === 'mp-xhs'){
++        setTimeout(() => {
++            setRef$1(instance);
++        });
++    } else {
++        setRef$1(instance);
++    }
+     setCurrentRenderingInstance(prev);
+     return result;
+ }
+@@ -5672,7 +5678,7 @@ function vOn(value, key) {
+     const ctx = instance.ctx;
+     // 微信小程序，QQ小程序，当 setData diff 的时候，若事件不主动同步过去，会导致事件绑定不更新，（question/137217）
+     const extraKey = typeof key !== 'undefined' &&
+-        (ctx.$mpPlatform === 'mp-weixin' || ctx.$mpPlatform === 'mp-qq') &&
++        (ctx.$mpPlatform === 'mp-weixin' || ctx.$mpPlatform === 'mp-qq' || ctx.$mpPlatform === 'mp-xhs') &&
+         (isString(key) || typeof key === 'number')
+         ? '_' + key
+         : '';

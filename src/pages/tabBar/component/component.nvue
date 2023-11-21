@@ -72,7 +72,7 @@ export default {
 					pages: ['button', 'checkbox', 'form', 'input', 'label', 'picker', 'picker-view', 'radio',
 						'slider',
 						'switch', 'textarea',
-						// #ifdef APP-PLUS || MP-WEIXIN || H5 || MP-BAIDU
+						// #ifdef APP-PLUS || MP-WEIXIN || H5 || MP-BAIDU || MP-XHS
 						'editor',
 						// #endif
 					]
