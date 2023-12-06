@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { onReady } from '@dcloudio/uni-app';
+import { onReady } from '@dcloudio/uni-app'
 
 const fontFamily = ref('Montserrat')
 const loaded = ref(false)
 
 const drawText = () => {
   const ctx = uni.createCanvasContext('mycanvas')
-  ctx.clearRect(0, 0, 300, 300);
-  ctx.font = 'normal 20px Montserrat';
-  ctx.fillText('Hello World', 10, 50);
-  ctx.draw();
+  ctx.clearRect(0, 0, 300, 300)
+  ctx.font = 'normal 20px Montserrat'
+  ctx.fillText('Hello World', 10, 50)
+  ctx.draw()
 }
 
 const loadFontFace = () => {
@@ -18,17 +18,17 @@ const loadFontFace = () => {
     family: fontFamily.value,
     source: 'url("https://dsplatweb.oss-cn-chengdu.aliyuncs.com/font/Montserrat-SemiBold.otf")',
     success(res) {
-      console.log(res.status);
+      console.log(res.status)
       loaded.value = true
-      drawText();
+      drawText()
     },
     fail: function (res) {
-      console.log(res);
+      console.log(res)
     },
     complete: function (res) {
-      console.log(res.status);
+      console.log(res.status)
     },
-  });
+  })
 }
 
 const loadGlobalFontFace = () => {
@@ -37,24 +37,24 @@ const loadGlobalFontFace = () => {
     family: fontFamily.value,
     source: 'url("https://dsplatweb.oss-cn-chengdu.aliyuncs.com/font/Montserrat-SemiBold.otf")',
     success(res) {
-      console.log(res.status);
+      console.log(res.status)
       loaded.value = true
-      drawText();
+      drawText()
     },
     fail: function (res) {
-      console.log(res);
+      console.log(res)
     },
     complete: function (res) {
-      console.log(res.status);
+      console.log(res.status)
     },
-  });
+  })
 }
 
 onReady(() => {
   console.log('load-fontface onReady')
   setTimeout(() => {
-    drawText();
-  });
+    drawText()
+  })
 })
 </script>
 

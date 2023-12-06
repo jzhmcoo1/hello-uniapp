@@ -1,57 +1,76 @@
 <script>
-import { mapMutations } from "vuex";
-import { version } from "./package.json";
-import checkUpdate from "@/uni_modules/uni-upgrade-center-app/utils/check-update";
+import { mapMutations } from 'vuex'
+import { version } from './package.json'
+import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update'
 
 export default {
   onLaunch: function () {
     // #ifdef H5
     console.log(
       `%c hello uniapp %c v${version} `,
-      "background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff",
-      "background:#007aff ;padding: 1px; border-radius: 0 3px 3px 0;  color: #fff; font-weight: bold;"
-    );
+      'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+      'background:#007aff ;padding: 1px; border-radius: 0 3px 3px 0;  color: #fff; font-weight: bold;'
+    )
     // #endif
     // 线上示例使用
     // console.log('%c uni-app官方团队诚邀优秀前端工程师加盟，一起打造更卓越的uni-app & uniCloud，欢迎投递简历到 hr2013@dcloud.io', 'color: red');
-    console.log("App Launch");
+    console.log('App Launch')
     // #ifdef APP-PLUS
     // App平台检测升级，服务端代码是通过uniCloud的云函数实现的，详情可参考：https://ext.dcloud.net.cn/plugin?id=4542
-    if (plus.runtime.appid !== "HBuilder") {
+    if (plus.runtime.appid !== 'HBuilder') {
       // 真机运行不需要检查更新，真机运行时appid固定为'HBuilder'，这是调试基座的appid
-      checkUpdate();
+      checkUpdate()
     }
 
     // 一键登录预登陆，可以显著提高登录速度
     uni.preLogin({
-      provider: "univerify",
+      provider: 'univerify',
       success: (res) => {
         // 成功
-        this.setUniverifyErrorMsg();
-        console.log("preLogin success: ", res);
+        this.setUniverifyErrorMsg()
+        console.log('preLogin success: ', res)
       },
       fail: (res) => {
-        this.setUniverifyLogin(false);
-        this.setUniverifyErrorMsg(res.errMsg);
+        this.setUniverifyLogin(false)
+        this.setUniverifyErrorMsg(res.errMsg)
         // 失败
-        console.log("preLogin fail res: ", res);
+        console.log('preLogin fail res: ', res)
       },
-    });
+    })
     // #endif
+
+    const fontFamily = 'Montserrat'
+    let loaded = false
+
+    uni.loadFontFace({
+      global: true,
+      family: fontFamily,
+      source: 'url("https://dsplatweb.oss-cn-chengdu.aliyuncs.com/font/Montserrat-SemiBold.otf")',
+      success(res) {
+        console.log('onLaunch => global loadFontface', res.status)
+        loaded = true
+      },
+      fail: function (res) {
+        console.log(res)
+      },
+      complete: function (res) {
+        console.log(res.status)
+      },
+    })
   },
   onShow: function () {
-    console.log("App Show");
+    console.log('App Show')
   },
   onHide: function () {
-    console.log("App Hide");
+    console.log('App Hide')
   },
   globalData: {
-    test: "",
+    test: '',
   },
   methods: {
-    ...mapMutations(["setUniverifyErrorMsg", "setUniverifyLogin"]),
+    ...mapMutations(['setUniverifyErrorMsg', 'setUniverifyLogin']),
   },
-};
+}
 </script>
 
 <style lang="scss">
@@ -94,17 +113,10 @@ uni-page-body {
 
 /* 以下样式用于 hello uni-app 演示所需 */
 page {
-<<<<<<< src/App.vue
   // background-color: #efeff4;
   // height: 100%;
   font-size: 28rpx;
   /* line-height: 1.8; */
-=======
-	// background-color: #efeff4;
-	// height: 100%;
-	font-size: 28rpx;
-	/* line-height: 1.8; */
->>>>>>> src/App.vue
 }
 
 .fix-pc-padding {

@@ -3,7 +3,8 @@
     <page-head :title="title"></page-head>
     <view class="uni-common-mt">
       <view>
-        <map :latitude="latitude" :longitude="longitude" :markers="covers">
+        <map :latitude="latitude" :longitude="longitude" :markers="covers" @regionchange="onRegionchange"
+          @markertap="onMarkerTap" @tap="onMapTap">
         </map>
       </view>
     </view>
@@ -13,7 +14,7 @@
 export default {
   data() {
     return {
-      title: "map",
+      title: 'map',
       latitude: 39.909,
       longitude: 116.39742,
       covers: [
@@ -22,11 +23,11 @@ export default {
           latitude: 39.9085,
           longitude: 116.39747,
           // #ifdef APP-PLUS
-          iconPath: "../../../static/app-plus/location@3x.png",
+          iconPath: '../../../static/app-plus/location@3x.png',
           // #endif
           // #ifndef APP-PLUS
           iconPath:
-            "https://picasso-static.xiaohongshu.com/fe-platform/2dc836eabf1d27134777c857bd485fa10a926f80/location.png",
+            'https://picasso-static.xiaohongshu.com/fe-platform/2dc836eabf1d27134777c857bd485fa10a926f80/location.png',
           height: 75,
           width: 75,
           // #endif
@@ -36,20 +37,30 @@ export default {
           latitude: 39.9,
           longitude: 116.39,
           // #ifdef APP-PLUS
-          iconPath: "../../../static/app-plus/location@3x.png",
+          iconPath: '../../../static/app-plus/location@3x.png',
           // #endif
           // #ifndef APP-PLUS
           iconPath:
-            "https://picasso-static.xiaohongshu.com/fe-platform/2dc836eabf1d27134777c857bd485fa10a926f80/location.png",
+            'https://picasso-static.xiaohongshu.com/fe-platform/2dc836eabf1d27134777c857bd485fa10a926f80/location.png',
           height: 75,
           width: 75,
           // #endif
         },
       ],
-    };
+    }
   },
-  methods: {},
-};
+  methods: {
+    onMapTap(e) {
+      console.log('onMapTap', e)
+    },
+    onRegionchange(e) {
+      console.log('onRegionchange', e)
+    },
+    onMarkerTap(e) {
+      console.log('onMarkerTap', e)
+    }
+  },
+}
 </script>
 <style>
 map {
