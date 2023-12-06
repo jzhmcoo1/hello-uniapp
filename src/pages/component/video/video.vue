@@ -12,6 +12,8 @@
           danmu-btn
           controls
           poster="https://web-assets.dcloud.net.cn/unidoc/zh/poster.png"
+          @play="onPlay"
+          @pause="onPause"
         ></video>
       </view>
       <!-- #ifndef MP-ALIPAY || MP-TOUTIAO || MP-KUAISHOU || MP-LARK || MP-JD -->
@@ -41,35 +43,35 @@
 export default {
   data() {
     return {
-      title: "video",
-      src: "",
+      title: 'video',
+      src: '',
       danmuList: [
         {
-          text: "第 1s 出现的弹幕",
-          color: "#ff0000",
+          text: '第 1s 出现的弹幕',
+          color: '#ff0000',
           time: 1,
         },
         {
-          text: "第 3s 出现的弹幕",
-          color: "#ff00ff",
+          text: '第 3s 出现的弹幕',
+          color: '#ff00ff',
           time: 3,
         },
       ],
-      danmuValue: "",
+      danmuValue: '',
       showVideo: false,
-    };
+    }
   },
   onReady: function (res) {
     // #ifndef MP-ALIPAY || MP-TOUTIAO
-    this.videoContext = uni.createVideoContext("myVideo");
+    this.videoContext = uni.createVideoContext('myVideo')
     // #endif
     // #ifdef APP-PLUS || MP-BAIDU
     setTimeout(() => {
-      this.showVideo = true;
-    }, 350);
+      this.showVideo = true
+    }, 350)
     // #endif
     // #ifndef APP-PLUS || MP-BAIDU
-    this.showVideo = true;
+    this.showVideo = true
     // #endif
   },
   methods: {
@@ -77,26 +79,40 @@ export default {
       this.videoContext.sendDanmu({
         text: this.danmuValue,
         color: this.getRandomColor(),
-      });
-      this.danmuValue = "";
+      })
+      this.danmuValue = ''
     },
     videoErrorCallback: function (e) {
       uni.showModal({
         content: e.target.errMsg,
         showCancel: false,
-      });
+      })
     },
     getRandomColor: function () {
-      const rgb = [];
+      const rgb = []
       for (let i = 0; i < 3; ++i) {
-        let color = Math.floor(Math.random() * 256).toString(16);
-        color = color.length == 1 ? "0" + color : color;
-        rgb.push(color);
+        let color = Math.floor(Math.random() * 256).toString(16)
+        color = color.length == 1 ? '0' + color : color
+        rgb.push(color)
       }
-      return "#" + rgb.join("");
+      return '#' + rgb.join('')
     },
+    onPlay(e){
+      console.log('onPlay', e)
+      uni.showToast({
+        title: '视频播放了',
+        icon: 'none'
+      })
+    },
+    onPause(e){
+      console.log('onPause', e)
+      uni.showToast({
+        title: '视频暂停了',
+        icon: 'none'
+      })
+    }
   },
-};
+}
 </script>
 
 <style>

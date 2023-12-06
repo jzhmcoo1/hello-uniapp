@@ -2,13 +2,12 @@
 import {
   isPC
 } from './isPC'
-let mpMixins = {}
 let is_pc = null
 is_pc = isPC()
 // #endif
 // #ifdef APP-VUE|| MP-WEIXIN || H5
 
-mpMixins = {
+let mpMixins = {
   data () {
     return {
       is_show: 'none'
