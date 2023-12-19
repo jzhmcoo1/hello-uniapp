@@ -364,6 +364,12 @@
 				"navigationBarTitleText": "SJS测试"
 			}
 		},
+    {
+      "path": "pages/component/mp-twoway-bindings/mp-twoway-bindings",
+      "style": {
+        "navigationBarTitleText": "测试双向绑定"
+      }
+    },
 		// #ifdef APP-VUE || APP-NVUE
 		{
 			"path": "pages/component/ad/ad",

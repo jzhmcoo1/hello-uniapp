@@ -406,7 +406,10 @@ export default {
     },
     onregionchange(e) {
       //   console.log(JSON.stringify(e))
-      console.log('onregionchange', e)
+      uni.showToast({
+        title: 'map regionchange',
+        icon: 'none'
+      })
     },
     onpoitap(e) {
       uni.showModal({

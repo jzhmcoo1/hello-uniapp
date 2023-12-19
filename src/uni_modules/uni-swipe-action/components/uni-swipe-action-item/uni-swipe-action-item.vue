@@ -109,6 +109,7 @@
 	import render from './render.js'
 	export default {
 		mounted(e, ins, owner) {
+      console.log('uni-swipe-action-item: ==> mounted', e, ins, owner)
 			this.state = {}
 		},
 		methods: {
@@ -116,12 +117,15 @@
 				render.showWatch(newVal, oldVal, ownerInstance, instance, this)
 			},
 			touchstart(e, ownerInstance) {
+        console.log('uni-swipe-action-item: touchstart', e, ownerInstance)
 				render.touchstart(e, ownerInstance, this)
 			},
 			touchmove(e, ownerInstance) {
+        console.log('uni-swipe-action-item: touchmove', e, ownerInstance)
 				render.touchmove(e, ownerInstance, this)
 			},
 			touchend(e, ownerInstance) {
+        console.log('uni-swipe-action-item: touchend', e, ownerInstance)
 				render.touchend(e, ownerInstance, this)
 			}
 		}

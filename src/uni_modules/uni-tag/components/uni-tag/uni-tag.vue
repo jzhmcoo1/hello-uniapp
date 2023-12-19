@@ -3,7 +3,7 @@
 </template>
 
 <script>
-	/**
+/**
 	 * Tag 标签
 	 * @description 用于展示1个或多个文字标签，可点击切换选中、不选中的状态
 	 * @tutorial https://ext.dcloud.net.cn/plugin?id=35
@@ -24,86 +24,86 @@
 	 * @event {Function} click 点击 Tag 触发事件
 	 */
 
-	export default {
-		name: "UniTag",
-		emits: ['click'],
-		props: {
-			type: {
-				// 标签类型default、primary、success、warning、error、royal
-				type: String,
-				default: "default"
-			},
-			size: {
-				// 标签大小 normal, small
-				type: String,
-				default: "normal"
-			},
-			// 标签内容
-			text: {
-				type: String,
-				default: ""
-			},
-			disabled: {
-				// 是否为禁用状态
-				type: [Boolean, String],
-				default: false
-			},
-			inverted: {
-				// 是否为空心
-				type: [Boolean, String],
-				default: false
-			},
-			circle: {
-				// 是否为圆角样式
-				type: [Boolean, String],
-				default: false
-			},
-			mark: {
-				// 是否为标记样式
-				type: [Boolean, String],
-				default: false
-			},
-			customStyle: {
-				type: String,
-				default: ''
-			}
-		},
-		computed: {
-			classes() {
-				const {
-					type,
-					disabled,
-					inverted,
-					circle,
-					mark,
-					size,
-					isTrue
-				} = this
-				const classArr = [
-					'uni-tag--' + type,
-					'uni-tag--' + size,
-					isTrue(disabled) ? 'uni-tag--disabled' : '',
-					isTrue(inverted) ? 'uni-tag--' + type + '--inverted' : '',
-					isTrue(circle) ? 'uni-tag--circle' : '',
-					isTrue(mark) ? 'uni-tag--mark' : '',
-					// type === 'default' ? 'uni-tag--default' : 'uni-tag-text',
-					isTrue(inverted) ? 'uni-tag--inverted uni-tag-text--' + type : '',
-					size === 'small' ? 'uni-tag-text--small' : ''
-				]
-				// 返回类的字符串，兼容字节小程序
-				return classArr.join(' ')
-			}
-		},
-		methods: {
-			isTrue(value) {
-				return value === true || value === 'true'
-			},
-			onClick() {
-				if (this.isTrue(this.disabled)) return
-				this.$emit("click");
-			}
-		}
-	};
+export default {
+  name: 'UniTag',
+  emits: ['click'],
+  props: {
+    type: {
+      // 标签类型default、primary、success、warning、error、royal
+      type: String,
+      default: 'default'
+    },
+    size: {
+      // 标签大小 normal, small
+      type: String,
+      default: 'normal'
+    },
+    // 标签内容
+    text: {
+      type: String,
+      default: ''
+    },
+    disabled: {
+      // 是否为禁用状态
+      type: [Boolean, String],
+      default: false
+    },
+    inverted: {
+      // 是否为空心
+      type: [Boolean, String],
+      default: false
+    },
+    circle: {
+      // 是否为圆角样式
+      type: [Boolean, String],
+      default: false
+    },
+    mark: {
+      // 是否为标记样式
+      type: [Boolean, String],
+      default: false
+    },
+    customStyle: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    classes() {
+      const {
+        type,
+        disabled,
+        inverted,
+        circle,
+        mark,
+        size,
+        isTrue
+      } = this
+      const classArr = [
+        'uni-tag--' + type,
+        'uni-tag--' + size,
+        isTrue(disabled) ? 'uni-tag--disabled' : '',
+        isTrue(inverted) ? 'uni-tag--' + type + '--inverted' : '',
+        isTrue(circle) ? 'uni-tag--circle' : '',
+        isTrue(mark) ? 'uni-tag--mark' : '',
+        // type === 'default' ? 'uni-tag--default' : 'uni-tag-text',
+        isTrue(inverted) ? 'uni-tag--inverted uni-tag-text--' + type : '',
+        size === 'small' ? 'uni-tag-text--small' : ''
+      ]
+      // 返回类的字符串，兼容字节小程序
+      return classArr.join(' ')
+    }
+  },
+  methods: {
+    isTrue(value) {
+      return value === true || value === 'true'
+    },
+    onClick() {
+      if (this.isTrue(this.disabled)) return
+      this.$emit('click')
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
