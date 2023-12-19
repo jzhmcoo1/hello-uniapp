@@ -5,7 +5,7 @@ import {
 let is_pc = null
 is_pc = isPC()
 // #endif
-// #ifdef APP-VUE|| MP-WEIXIN || H5
+// #ifdef APP-VUE|| MP-WEIXIN || H5 || MP-XHS
 
 let mpMixins = {
   data () {

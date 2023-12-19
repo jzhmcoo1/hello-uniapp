@@ -1,25 +1,20 @@
 <template>
-  <view style="padding: 20px;">
-    <mp-html :content="html" />
+  <view style="padding: 20px">
     <mp-html :content="html2" />
   </view>
 </template>
 <script>
-  import mpHtml from 'mp-html/dist/uni-app/components/mp-html/mp-html'
-  export default {
-    // 不可省略
-    components: {
-      mpHtml
-    },
-    data () {
-      return {
-        html: `
-          <div>
-            <h1>mp-html 小程序富文本组件</h1>
-            <img src="https://img.yzcdn.cn/vant/cat.jpeg" />  
-          </div>
-        `,
-        html2: `
+import mpHtml from 'mp-html/dist/uni-app/components/mp-html/mp-html'
+export default {
+  // 不可省略
+  components: {
+    mpHtml,
+  },
+  data() {
+    return {
+      html2: `
+          <h1>mp-html 小程序富文本组件</h1>
+          <img src="https://img.yzcdn.cn/vant/cat.jpeg" />
           <h1>h1标题</h1>
           <h2>h2标题</h2>
           <h3>h3标题</h3>
@@ -56,8 +51,8 @@
   Eum, reiciendis vitae sint dignissimos suscipit quisquam. Eius saepe perferendis voluptatibus aspernatur ad error quasi voluptas modi atque eveniet obcaecati, facere quibusdam? Optio, praesentium? Nisi ipsa voluptas praesentium error dolor!
           </p>
           <br />
-        `
-      }
+        `,
     }
-  }
+  },
+}
 </script>

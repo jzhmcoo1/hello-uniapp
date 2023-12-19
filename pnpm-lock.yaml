@@ -6,10 +6,10 @@ settings:
 
 patchedDependencies:
   '@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001':
-    hash: ckuvqrvcr5fgmcmumtqibgfoxy
+    hash: wduytp7k34vq4pblvkgf5w5ose
     path: patches/@dcloudio__uni-mp-vue@3.0.0-alpha-3090020230826001.patch
   '@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001':
-    hash: nqrcb7h3gkczosorczqb4bwcge
+    hash: vfftmhemst6txekrpaow34mzny
     path: patches/@dcloudio__uni-mp-xhs@3.0.0-alpha-3090020230826001.patch
 
 dependencies:
@@ -48,13 +48,13 @@ dependencies:
     version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-toutiao@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
   '@dcloudio/uni-mp-vue':
     specifier: ^3.0.0-alpha-3090020230826001
-    version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+    version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
   '@dcloudio/uni-mp-weixin':
     specifier: 3.0.0-alpha-3090020230826001
     version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-weixin@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
   '@dcloudio/uni-mp-xhs':
     specifier: 3.0.0-alpha-3090020230826001
-    version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001(patch_hash=nqrcb7h3gkczosorczqb4bwcge)(postcss@8.4.31)(vue@3.3.8)
+    version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001(patch_hash=vfftmhemst6txekrpaow34mzny)(postcss@8.4.31)(vue@3.3.8)
   '@dcloudio/uni-quickapp-webview':
     specifier: 3.0.0-alpha-3090020230826001
     version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-quickapp-webview@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
@@ -2054,7 +2054,7 @@ packages:
     dependencies:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/compiler-core': artifactory.devops.xiaohongshu.com/@vue/compiler-core@3.2.47
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
@@ -2074,7 +2074,7 @@ packages:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-compiler': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-compiler@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-mp-weixin': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-weixin@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/compiler-core': artifactory.devops.xiaohongshu.com/@vue/compiler-core@3.2.47
@@ -2124,7 +2124,7 @@ packages:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-compiler': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-compiler@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
     transitivePeerDependencies:
@@ -2143,7 +2143,7 @@ packages:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-compiler': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-compiler@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-mp-weixin': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-weixin@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/compiler-core': artifactory.devops.xiaohongshu.com/@vue/compiler-core@3.2.47
@@ -2167,7 +2167,7 @@ packages:
       '@dcloudio/uni-mp-compiler': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-compiler@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-toutiao': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-toutiao@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/compiler-core': artifactory.devops.xiaohongshu.com/@vue/compiler-core@3.2.47
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
@@ -2186,7 +2186,7 @@ packages:
     dependencies:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
       fs-extra: artifactory.devops.xiaohongshu.com/fs-extra@10.1.0
@@ -2206,7 +2206,7 @@ packages:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-compiler': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-compiler@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/compiler-core': artifactory.devops.xiaohongshu.com/@vue/compiler-core@3.2.47
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
@@ -2226,7 +2226,7 @@ packages:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-i18n': artifactory.devops.xiaohongshu.com/@dcloudio/uni-i18n@3.0.0-alpha-3090020230826001
       '@dcloudio/uni-mp-compiler': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-compiler@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/compiler-sfc': artifactory.devops.xiaohongshu.com/@vue/compiler-sfc@3.2.47
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
@@ -2238,7 +2238,7 @@ packages:
       - vue
     dev: false
 
-  artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy):
+  artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose):
     resolution: {integrity: sha512-pMOUfsRyscP0mkis2RV/xV42HvfqqY4HEiWQs5LUQGa11T5RRw14bzLTvFPwtvC7vRlfwjuoBVPBY1WpAzYSCw==, registry: http://npm.devops.xiaohongshu.com:7001/, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@dcloudio/uni-mp-vue/-/uni-mp-vue-3.0.0-alpha-3090020230826001.tgz}
     id: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue/3.0.0-alpha-3090020230826001
     name: '@dcloudio/uni-mp-vue'
@@ -2257,7 +2257,7 @@ packages:
     dependencies:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
       jimp: artifactory.devops.xiaohongshu.com/jimp@0.10.3
@@ -2274,7 +2274,7 @@ packages:
       - vue
     dev: false
 
-  artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001(patch_hash=nqrcb7h3gkczosorczqb4bwcge)(postcss@8.4.31)(vue@3.3.8):
+  artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001(patch_hash=vfftmhemst6txekrpaow34mzny)(postcss@8.4.31)(vue@3.3.8):
     resolution: {integrity: sha512-ofZPgXhPrqZAz/9pkVQe33n/U4neiekBzuxaCaKSPj8trsjqnCYHezIu3sMOIW+WSVEK/gf61fEYPqSpR3R9mw==, registry: http://npm.devops.xiaohongshu.com:7001/, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@dcloudio/uni-mp-xhs/-/uni-mp-xhs-3.0.0-alpha-3090020230826001.tgz}
     id: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs/3.0.0-alpha-3090020230826001
     name: '@dcloudio/uni-mp-xhs'
@@ -2283,7 +2283,7 @@ packages:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-compiler': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-compiler@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
     transitivePeerDependencies:
@@ -2326,7 +2326,7 @@ packages:
     dependencies:
       '@dcloudio/uni-cli-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-cli-shared@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
       '@dcloudio/uni-mp-vite': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vite@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
-      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=ckuvqrvcr5fgmcmumtqibgfoxy)
+      '@dcloudio/uni-mp-vue': artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-vue@3.0.0-alpha-3090020230826001(patch_hash=wduytp7k34vq4pblvkgf5w5ose)
       '@dcloudio/uni-shared': artifactory.devops.xiaohongshu.com/@dcloudio/uni-shared@3.0.0-alpha-3090020230826001
       '@vue/shared': artifactory.devops.xiaohongshu.com/@vue/shared@3.2.47
     transitivePeerDependencies:

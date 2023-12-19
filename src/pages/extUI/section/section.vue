@@ -20,18 +20,18 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-			}
-		},
-		onReady() {
+export default {
+  data() {
+    return {
+    }
+  },
+  onReady() {
 
-		},
-		methods: {
+  },
+  methods: {
 
-		}
-	}
+  }
+}
 </script>
 
 <style lang="scss">

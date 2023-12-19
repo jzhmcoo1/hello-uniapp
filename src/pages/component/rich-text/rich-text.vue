@@ -22,23 +22,23 @@
 	</view>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				title: 'rich-text',
-				nodes: [{
-					name: 'div',
-					attrs: {
-						class: 'div-class',
-						style: 'line-height: 60px; color: red; text-align:center;'
-					},
-					children: [{
-						type: 'text',
-						text: 'Hello&nbsp;uni-app!'
-					}]
-				}],
-				strings: '<div style="text-align:center;"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png"/></div>'
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      title: 'rich-text',
+      nodes: [{
+        name: 'div',
+        attrs: {
+          class: 'div-class',
+          style: 'line-height: 60px; color: red; text-align:center;'
+        },
+        children: [{
+          type: 'text',
+          text: 'Hello&nbsp;uni-app!'
+        }]
+      }],
+      strings: '<div style="text-align:center;"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png"/></div>'
+    }
+  }
+}
 </script>
