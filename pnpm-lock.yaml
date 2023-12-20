@@ -9,7 +9,7 @@ patchedDependencies:
     hash: wduytp7k34vq4pblvkgf5w5ose
     path: patches/@dcloudio__uni-mp-vue@3.0.0-alpha-3090020230826001.patch
   '@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001':
-    hash: vfftmhemst6txekrpaow34mzny
+    hash: kbnls4uvw7evo2zsou5fwd5zwu
     path: patches/@dcloudio__uni-mp-xhs@3.0.0-alpha-3090020230826001.patch
 
 dependencies:
@@ -54,7 +54,7 @@ dependencies:
     version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-weixin@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
   '@dcloudio/uni-mp-xhs':
     specifier: 3.0.0-alpha-3090020230826001
-    version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001(patch_hash=vfftmhemst6txekrpaow34mzny)(postcss@8.4.31)(vue@3.3.8)
+    version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001(patch_hash=kbnls4uvw7evo2zsou5fwd5zwu)(postcss@8.4.31)(vue@3.3.8)
   '@dcloudio/uni-quickapp-webview':
     specifier: 3.0.0-alpha-3090020230826001
     version: artifactory.devops.xiaohongshu.com/@dcloudio/uni-quickapp-webview@3.0.0-alpha-3090020230826001(postcss@8.4.31)(vue@3.3.8)
@@ -2274,7 +2274,7 @@ packages:
       - vue
     dev: false
 
-  artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001(patch_hash=vfftmhemst6txekrpaow34mzny)(postcss@8.4.31)(vue@3.3.8):
+  artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs@3.0.0-alpha-3090020230826001(patch_hash=kbnls4uvw7evo2zsou5fwd5zwu)(postcss@8.4.31)(vue@3.3.8):
     resolution: {integrity: sha512-ofZPgXhPrqZAz/9pkVQe33n/U4neiekBzuxaCaKSPj8trsjqnCYHezIu3sMOIW+WSVEK/gf61fEYPqSpR3R9mw==, registry: http://npm.devops.xiaohongshu.com:7001/, tarball: https://artifactory.devops.xiaohongshu.com/artifactory/api/npm/npm-public/@dcloudio/uni-mp-xhs/-/uni-mp-xhs-3.0.0-alpha-3090020230826001.tgz}
     id: artifactory.devops.xiaohongshu.com/@dcloudio/uni-mp-xhs/3.0.0-alpha-3090020230826001
     name: '@dcloudio/uni-mp-xhs'
