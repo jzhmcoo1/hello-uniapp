@@ -89,6 +89,10 @@ export default {
         url: 'background-audio',
       },
       // #endif
+      {
+        name: '选择媒体',
+        url: 'choose-media',
+      },
       // #ifndef MP-ALIPAY
       {
         name: '视频',

@@ -719,6 +719,12 @@
 						"navigationBarTitleText": "文件"
 					}
 				},
+        {
+          "path": "choose-media/choose-media",
+          "style": {
+            "navigationBarTitleText": "媒体"
+          }
+        },
 				// #ifndef MP-QQ || MP-TOUTIAO
 				{
 					"path": "map/map",
